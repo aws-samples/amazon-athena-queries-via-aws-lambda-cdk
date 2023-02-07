@@ -1,4 +1,4 @@
-## My Project
+## Amazon Athena Queries via AWS Lambda CDK
 
 TODO: Fill this README out!
 
