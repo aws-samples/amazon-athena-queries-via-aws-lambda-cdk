@@ -25,6 +25,18 @@ This architecture showcases how Amazon Athena SQL queries can be executed using 
 - **IAM role for Lambda function** — Lambda execution role with the proper permissions to query S3 via Athena and save results to specified S3 location. This role contains an access policy that follows the principal of least-privilege
 
 ### Target architecture
+![Architecture Diagram](/architecture-diagram.png "Architecture Diagram")
+
+### Automation and scale
+AWS Lambda can be run on-demand or can be configured to run on a schedule using CloudWatch Events.
+
+## Tools
+- [Amazon Simple Storage Service (Amazon S3)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) — used for data storage
+- [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) — serverless compute service, makes the API call to Athena
+- [AWS Cloud Development Kit (CDK)](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) — software development framework used to provision cloud resource
+- [Amazon Athena](https://docs.aws.amazon.com/athena/latest/ug/what-is.html) (indirectly) — serverless, interactive analytics service, executes SQL query on S3
+- [AWS Glue](https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html) (prerequisite) — data catalog of available data, contains metadata for tables queried by Athena
+
 
 ## Security
 
