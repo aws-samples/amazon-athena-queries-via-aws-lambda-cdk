@@ -32,6 +32,8 @@ AWS Lambda can be run on-demand or can be configured to run on a schedule using 
 
 ## Getting started
 
+###TODO###
+
 ## Tools
 - [Amazon Simple Storage Service (Amazon S3)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) — used for data storage
 - [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) — serverless compute service, makes the API call to Athena
