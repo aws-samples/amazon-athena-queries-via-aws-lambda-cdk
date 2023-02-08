@@ -25,7 +25,7 @@ This architecture showcases how Amazon Athena SQL queries can be executed using 
 - **IAM role for Lambda function** — Lambda execution role with the proper permissions to query S3 via Athena and save results to specified S3 location. This role contains an access policy that follows the principal of least-privilege
 
 ### Target architecture
-![Architecture Diagram](/architecture-diagram.png "Architecture Diagram")
+![Architecture Diagram](/architecture_diagram.png "Architecture Diagram")
 
 ### Automation and scale
 AWS Lambda can be run on-demand or can be configured to run on a schedule using CloudWatch Events.
