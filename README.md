@@ -1,11 +1,30 @@
 ## Amazon Athena Queries via AWS Lambda CDK
 
-TODO: Fill this README out!
+This architecture showcases how Amazon Athena SQL queries can be executed using AWS Lambda using the Boto3 API. Additionally, the pattern can be fully deployed using AWS CDK and is designed to fit into a larger serverless architecture. The CDK stack configures and deploys a Lambda function with the appropriate IAM permissions to make Athena SQL queries on an S3 bucket. The query results can then be found in the S3 location specified by the user. This architecture can be used if there is a query that needs to run a on regular, scheduled basis
 
-Be sure to:
+## Prerequists and limitations
 
-* Change the title in this README
-* Edit your repository description on GitHub
+### Prerequistes
+- An active AWS account
+- An Amazon Simple Storage Service (Amazon S3) with pre-existing data
+  - Data to be queried by Athena should be available in an S3 bucket.
+- Amazon S3 data is cataloged via AWS Glue
+  - This can be done using a Glue crawler. For more information regarding this, refer to [Using AWS Glue to connect to data sources in Amazon S3](https://docs.aws.amazon.com/athena/latest/ug/data-sources-glue.html) from the Amazon Athena documentation.
+- Default output S3 bucket for Amazon Athena has been set
+  - Before running any queries in Athena, an output S3 bucket location in the same region must be set in Athena settings. For more information regarding this, refer to [Specifying a query result location](https://docs.aws.amazon.com/athena/latest/ug/querying.html#query-results-specify-location) from the Amazon Athena documentation.
+- Amazon Athena workgroup
+  - If you do not have an existing Athena workgroup to use for querying, follow [Setting up workgroups](https://docs.aws.amazon.com/athena/latest/ug/workgroups-procedure.html) from the Amazon Athena documentation. We recommend using a workgroup that only has access to the tables used in the query.
+- Familiarity with deploying AWS resources using AWS CDK.
+  - For more information regarding this, refer to the [AWS CDK Workshop](https://cdkworkshop.com/).
+  
+## Architecture
+
+### Target technology stack
+- **S3 bucket (prerequisite)** — contains data to be queries
+- **Lambda function** — executes Athena SQL queries via Boto3 API
+- **IAM role for Lambda function** — Lambda execution role with the proper permissions to query S3 via Athena and save results to specified S3 location. This role contains an access policy that follows the principal of least-privilege
+
+### Target architecture
 
 ## Security
 
