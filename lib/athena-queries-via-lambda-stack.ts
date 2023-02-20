@@ -10,9 +10,11 @@ export class AthenaQueriesViaLambdaStack extends cdk.Stack {
 
     const REGION = cdk.Stack.of(this).region
     const ACCOUNT = cdk.Stack.of(this).account
-    const INPUT_S3_BUCKET = "pizza-sfo" //TODO (name of S3 bucket)
-    const S3_INPUT_PATH = "pizza_sales" //TODO (name of parent S3 folder with data files)
-    const S3_OUTPUT_PATH = "athena_output" //TODO (name of S3 folder to save output query files)
+    
+    const INPUT_S3_BUCKET = "pizza-sfo" //TODO (name of input S3 bucket)
+    const S3_INPUT_PATH = "pizza_sales" //TODO (name of parent S3 folder within INPUT_S3_BUCKET containing data files)
+    const OUTPUT_S3_BUCKET = "pizza-sfo" //TODO (name of output S3 bucket)
+    const S3_OUTPUT_PATH = "athena_output" //TODO (name of S3 folder within OUTPUT_S3_BUCKET to save output query files)
     const GLUE_DATABASE_NAME = "output_crawler" //TODO
     const ATHENA_WORKGROUP = "primary" //TODO
     const EXAMPLE_SQL_QUERY = "SELECT * FROM order_details" //TODO
@@ -22,7 +24,7 @@ export class AthenaQueriesViaLambdaStack extends cdk.Stack {
       code: lambda.Code.fromAsset('resources/lambda'),
       handler: 'queryAthena.lambda_handler',
       environment: { 
-        'OUTPUT_S3_BUCKET': `s3://${INPUT_S3_BUCKET}/${S3_OUTPUT_PATH}/`,
+        'OUTPUT_S3_BUCKET': `s3://${OUTPUT_S3_BUCKET}/${S3_OUTPUT_PATH}/`,
         'DATABASE': GLUE_DATABASE_NAME,
         'ATHENA_WORKGROUP': ATHENA_WORKGROUP,
         "QUERY_STRING": EXAMPLE_SQL_QUERY
@@ -47,8 +49,9 @@ export class AthenaQueriesViaLambdaStack extends cdk.Stack {
         ],
         resources: [
           `arn:aws:s3:::${INPUT_S3_BUCKET}`,
-          `arn:aws:s3:::${INPUT_S3_BUCKET}/${S3_OUTPUT_PATH}/*`,
+          `arn:aws:s3:::${OUTPUT_S3_BUCKET}`,
           `arn:aws:s3:::${INPUT_S3_BUCKET}/${S3_INPUT_PATH}/*`,
+          `arn:aws:s3:::${OUTPUT_S3_BUCKET}/${S3_OUTPUT_PATH}/*`,
           `arn:aws:athena:${REGION}:${ACCOUNT}:workgroup/${ATHENA_WORKGROUP}`,
           `arn:aws:glue:${REGION}:${ACCOUNT}:table/${GLUE_DATABASE_NAME}/*`,
           `arn:aws:glue:${REGION}:${ACCOUNT}:catalog`,
