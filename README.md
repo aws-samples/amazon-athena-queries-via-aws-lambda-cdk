@@ -76,7 +76,7 @@ If no test event exists for the Lambda function, create a new test event (fine t
 Next, navigate to the S3 bucket specified as the output location for Athena query results. Check that files have been saved to the specified output folder. Additionally, you can locally download the output file to verify the outputs of the Athena SQL.
 
 ### Step 5. Clean up
-Destroy the CDK stack by navigating to the root folder of the code files and running the following:
+Navigate to the root folder of the code files and run the following:
 ```
 cdk destroy
 ```
