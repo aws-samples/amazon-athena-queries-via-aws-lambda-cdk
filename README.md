@@ -13,8 +13,7 @@ This architecture showcases how Amazon Athena SQL queries can be executed via AW
 - Default output S3 bucket for Amazon Athena has been set
   - Before running any queries in Athena, an output S3 bucket location in the same region must be set in Athena settings. For more information regarding this, refer to [Specifying a query result location](https://docs.aws.amazon.com/athena/latest/ug/querying.html#query-results-specify-location) from the Amazon Athena documentation.
 - Amazon Athena workgroup
-  - If you do not have an existing Athena workgroup to use for querying, follow [Setting up workgroups](https://docs.aws.amazon.com/athena/latest/ug/workgroups-procedure.html) from the Amazon Athena documentation. 
-  - We recommend using a workgroup that only has access to the tables used in the query.
+  - If you do not have an existing Athena workgroup to use for querying, follow [Setting up workgroups](https://docs.aws.amazon.com/athena/latest/ug/workgroups-procedure.html) from the Amazon Athena documentation. We recommend using a workgroup that only has access to the tables used in the query.
 - Familiarity with deploying AWS resources using AWS CDK.
   - For more information regarding this, refer to the [AWS CDK Workshop](https://cdkworkshop.com/).
   
