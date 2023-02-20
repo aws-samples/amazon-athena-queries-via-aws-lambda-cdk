@@ -71,9 +71,9 @@ Navigate to the AWS Lambda console and look for the function created by the CDK 
 Click on the Lambda function and open the **“Configuration”** tab. Next, click on **“Environment Variables”**. The environment variables should match what you filled out in the `//TODO `sections in the CDK code.
 
 ### Step 5. Test Lambda function and verify Athena query results
-If no test event exists for the Lambda function, create a new test event (fine to use default, pre-populated JSON event). Click on “Test” and ensure the Lambda function executes successfully.
+If no test event exists for the Lambda function, create a new test event (fine to use the default, pre-populated JSON event). Click on “Test” and ensure the Lambda function executes successfully.
 
-Next, navigate to the S3 bucket specified as the output location for Athena query results. Check that files have been saved to the specified output folder. Additionally, you can locally download the output file to verify the outputs of the Athena SQL.
+Next, navigate to the S3 bucket specified as the output location for Athena query results. Check that files have been saved to the specified output folder. Additionally, you can locally download the output file to verify the specific Athena SQL query.
 
 ### Step 5. Clean up
 Navigate to the root folder of the code files and run the following:
