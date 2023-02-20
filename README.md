@@ -1,6 +1,6 @@
 ## Amazon Athena Queries via AWS Lambda CDK
 
-This architecture showcases how Amazon Athena SQL queries can be executed using AWS Lambda using the Boto3 API. Additionally, the pattern can be fully deployed using AWS CDK and is designed to fit into a larger serverless architecture. The CDK stack configures and deploys a Lambda function with the appropriate IAM permissions to make Athena SQL queries on an S3 bucket. The query results can then be found in the S3 location specified by the user. This architecture can be used if there is a query that needs to run a on regular, scheduled basis
+This architecture showcases how Amazon Athena SQL queries can be executed via AWS Lambda using the Boto3 API. Additionally, the pattern can be fully deployed using AWS CDK and is designed to fit into a larger serverless architecture. The CDK stack configures and deploys a Lambda function with the appropriate IAM permissions to make Athena SQL queries on an S3 bucket. The query results can then be found in the S3 location specified by the user. This architecture can be used if there is a query that needs to run a on regular, scheduled basis
 
 ## Prerequistes and limitations
 
