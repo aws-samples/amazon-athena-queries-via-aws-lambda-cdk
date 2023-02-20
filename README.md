@@ -51,6 +51,19 @@ Before getting ready to deploy, ensure the dependencies are installed by executi
 
 ### Step 3. Deploy the CDK app
 This stack uses assets, so the toolkit stack must be deployed to the environment. This can be done by running the following command:
+```
+cdk bootstrap aws://your-aws-account-id/your-specified-aws-region
+```
+
+At this point you can now synthesize the CloudFormation template for this code by running the following command:
+```
+cdk synth
+```
+
+Finally, to deploy the stack to your AWS environment run the following command:
+```
+cdk deploy
+```
 
 
 ## Tools
