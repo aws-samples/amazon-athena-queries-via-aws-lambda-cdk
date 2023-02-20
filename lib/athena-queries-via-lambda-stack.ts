@@ -10,12 +10,12 @@ export class AthenaQueriesViaLambdaStack extends cdk.Stack {
 
     const REGION = cdk.Stack.of(this).region
     const ACCOUNT = cdk.Stack.of(this).account
-    const INPUT_S3_BUCKET = "pizza-sfo" // TODO
-    const S3_INPUT_PATH = "pizza_sales" // TODO
-    const S3_OUTPUT_PATH = "athena_output" // TODO
-    const GLUE_DATABASE_NAME = "output_crawler" // TODO
-    const ATHENA_WORKGROUP = "primary" // TODO
-    const EXAMPLE_SQL_QUERY = "SELECT * FROM order_details" // TODO
+    const INPUT_S3_BUCKET = "pizza-sfo" //TODO
+    const S3_INPUT_PATH = "pizza_sales" //TODO
+    const S3_OUTPUT_PATH = "athena_output" //TODO
+    const GLUE_DATABASE_NAME = "output_crawler" //TODO
+    const ATHENA_WORKGROUP = "primary" //TODO
+    const EXAMPLE_SQL_QUERY = "SELECT * FROM order_details" //TODO
 
     const lambda_queryAthena = new lambda.Function(this, 'queryAthena', {
       runtime: lambda.Runtime.PYTHON_3_8,    
