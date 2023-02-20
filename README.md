@@ -35,20 +35,19 @@ AWS Lambda can be run on-demand or can be configured to [run on a schedule using
 ## Getting started
 
 ### Step 1. Clone Github repository
-Clone this repo and configure the `//TODO` portions of the code found in *lib/athena-queries-via-lambda-stack.ts* with proper variables from your AWS environment
+Clone this repo and configure the `//TODO` portions of the code found in the `lib/athena-queries-via-lambda-stack.ts` file with proper variables from your AWS environment
 
 ### Step 2. Build the CDK app
-Navigate to the root folder of the code files and run the following:
+The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
+Before getting ready to deploy, ensure the dependencies are installed by executing the following within the **root** folder of your code files:
   ```
   npm install -g aws-cdk
   npm install
   npm run build
   ```
 
-This will install the necessary AWS CDK, then this example's dependencies, and then build your TypeScript files and your CloudFormation template.
-
-**Note:** The root folder should contain the `cdk.json` file
+**Note:** The above commands should be run within the root folder containing the `cdk.json` file
 
 ### Step 3. Deploy the CDK app
 This stack uses assets, so the toolkit stack must be deployed to the environment. This can be done by running the following command:
