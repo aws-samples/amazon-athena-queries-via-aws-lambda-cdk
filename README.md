@@ -28,6 +28,8 @@ This architecture showcases how Amazon Athena SQL queries can be executed via AW
 ### Target architecture
 ![Architecture Diagram](/architecture_diagram.png "Architecture Diagram")
 
+- **Note:** For simplicity, the input and output buckets are configured to be the same in this patter. However, the user can optionally specify separate input and output buckets in the CDK code.
+
 ### Automation and scale
 AWS Lambda can be run on-demand or can be configured to run on a schedule using CloudWatch Events.
 
