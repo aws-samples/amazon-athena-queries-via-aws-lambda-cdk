@@ -40,7 +40,7 @@ Clone this repo and configure the `//TODO` portions of the code found in the `li
 ### Step 2. Build the CDK app
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
-Before getting ready to deploy, ensure the dependencies are installed by executing the following within the **root** folder of your code files:
+Before getting ready to deploy, ensure the dependencies are installed by executing the following within the **root folder** of your code files:
   ```
   npm install -g aws-cdk
   npm install
