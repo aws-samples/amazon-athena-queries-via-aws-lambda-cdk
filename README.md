@@ -34,7 +34,15 @@ AWS Lambda can be run on-demand or can be configured to [run on a schedule using
 
 ## Getting started
 
-###TODO###
+### Step 1. Clone Github repository
+- Clone this repo and configure the `//TODO` portions of the code found in *lib/athena-queries-via-lambda-stack.ts* with proper variables from your AWS environment
+### Step 2. Build the CDK app
+- Navigate to the root folder of the code files and run the following:
+  ```
+  npm install -g aws-cdk
+  npm install
+  npm run build
+  ```
 
 ## Tools
 - [Amazon Simple Storage Service (Amazon S3)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) — used for data storage
