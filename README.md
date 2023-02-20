@@ -39,13 +39,20 @@ Clone this repo and configure the `//TODO` portions of the code found in *lib/at
 
 ### Step 2. Build the CDK app
 Navigate to the root folder of the code files and run the following:
+
   ```
   npm install -g aws-cdk
   npm install
   npm run build
   ```
+
 This will install the necessary AWS CDK, then this example's dependencies, and then build your TypeScript files and your CloudFormation template.
-**Note:** The root folder of code files should contain the `cdk.json` file
+
+**Note:** The root folder should contain the `cdk.json` file
+
+### Step 3. Deploy the CDK app
+This stack uses assets, so the toolkit stack must be deployed to the environment. This can be done by running the following command:
+
 
 ## Tools
 - [Amazon Simple Storage Service (Amazon S3)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) — used for data storage
