@@ -10,9 +10,9 @@ export class AthenaQueriesViaLambdaStack extends cdk.Stack {
 
     const REGION = cdk.Stack.of(this).region
     const ACCOUNT = cdk.Stack.of(this).account
-    const INPUT_S3_BUCKET = "pizza-sfo" //TODO
-    const S3_INPUT_PATH = "pizza_sales" //TODO
-    const S3_OUTPUT_PATH = "athena_output" //TODO
+    const INPUT_S3_BUCKET = "pizza-sfo" //TODO (name of S3 bucket)
+    const S3_INPUT_PATH = "pizza_sales" //TODO (name of parent S3 folder with data files)
+    const S3_OUTPUT_PATH = "athena_output" //TODO (name of S3 folder to save output query files)
     const GLUE_DATABASE_NAME = "output_crawler" //TODO
     const ATHENA_WORKGROUP = "primary" //TODO
     const EXAMPLE_SQL_QUERY = "SELECT * FROM order_details" //TODO
