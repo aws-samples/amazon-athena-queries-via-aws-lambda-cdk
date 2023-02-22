@@ -30,6 +30,8 @@ export class AthenaQueriesViaLambdaStack extends cdk.Stack {
         "QUERY_STRING": EXAMPLE_SQL_QUERY
       }
     });
+   
+   const LAMBDA_FUNCTION_NAME = lambda_queryAthena.functionName
 
     lambda_queryAthena.addToRolePolicy(
       new aws_iam.PolicyStatement({
@@ -57,7 +59,7 @@ export class AthenaQueriesViaLambdaStack extends cdk.Stack {
           `arn:aws:glue:${REGION}:${ACCOUNT}:catalog`,
           `arn:aws:glue:${REGION}:${ACCOUNT}:database/${GLUE_DATABASE_NAME}`,
           `arn:aws:logs:${REGION}:${ACCOUNT}:*`,
-          `arn:aws:logs:${REGION}:${ACCOUNT}:log-group:/aws/lambda/queryathena:*`,
+          `arn:aws:logs:${REGION}:${ACCOUNT}:log-group:/aws/lambda/${LAMBDA_FUNCTION_NAME}:*`,
         ]
       }));
   }
