@@ -30,24 +30,23 @@ export class AthenaQueriesViaLambdaStack extends cdk.Stack {
         "QUERY_STRING": EXAMPLE_SQL_QUERY
       }
     });
+    
+    const LAMBDA_FUNCTION_NAME = lambda_queryAthena.functionName
    
-   const LAMBDA_FUNCTION_NAME = lambda_queryAthena.functionName
-
     lambda_queryAthena.addToRolePolicy(
       new aws_iam.PolicyStatement({
         effect: aws_iam.Effect.ALLOW,
         actions: [
           "athena:StartQueryExecution",
-           "athena:GetQueryExecution",
-           "glue:GetTable",
-           "s3:ListBucket",
-           "s3:GetObject",
-           "s3:PutObject",
-           "s3:GetBucketLocation",
-           "s3:ListMultipartUploadParts",
-           "logs:CreateLogGroup",
-           "logs:CreateLogStream",
-           "logs:PutLogEvents",
+          "athena:GetQueryExecution",
+          "glue:GetTable",
+          "s3:ListBucket",
+          "s3:GetObject",
+          "s3:GetBucketLocation",
+          "s3:ListMultipartUploadParts",
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
         ],
         resources: [
           `arn:aws:s3:::${INPUT_S3_BUCKET}`,
@@ -60,6 +59,17 @@ export class AthenaQueriesViaLambdaStack extends cdk.Stack {
           `arn:aws:glue:${REGION}:${ACCOUNT}:database/${GLUE_DATABASE_NAME}`,
           `arn:aws:logs:${REGION}:${ACCOUNT}:*`,
           `arn:aws:logs:${REGION}:${ACCOUNT}:log-group:/aws/lambda/${LAMBDA_FUNCTION_NAME}:*`,
+        ]
+      }));
+
+    lambda_queryAthena.addToRolePolicy(
+      new aws_iam.PolicyStatement({
+        effect: aws_iam.Effect.ALLOW,
+        actions: [
+          "s3:PutObject",
+        ],
+        resources: [
+          `arn:aws:s3:::${OUTPUT_S3_BUCKET}/${S3_OUTPUT_PATH}/*`,
         ]
       }));
   }
