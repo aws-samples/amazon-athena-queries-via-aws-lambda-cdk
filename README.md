@@ -55,7 +55,7 @@ This stack uses assets, so the toolkit stack must be deployed to the environment
 cdk bootstrap aws://your-aws-account-id/your-specified-aws-region
 ```
 
-At this point you can now synthesize the CloudFormation template for this code by running the following command:
+At this point, you can now synthesize the CloudFormation template for this code by running the following command:
 ```
 cdk synth
 ```
