@@ -100,3 +100,9 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
 
+## Authors
+- [Siddharth Kumaran](https://github.com/siddgood) -- Assoc. Machine Learning Engineer @ AWS Professional Services
+- Ritika Raju -- Assoc. Cloud App Developer @ AWS Professional Services
+- Isabelle Imacseng -- Data & ML Engineer @ AWS Professional Services
+- Radhika Tallamraju -- Data & ML Engineer @ AWS Professional Services
+
